@@ -11,25 +11,32 @@ myFunc(); // 2
 
 //Approach
 //Define Success: Success would be returning a number of how many times the function has been invoked
-//Key phrases: Return new function, and return number of times it has been called
-//count --> Gets updated every time it gets invoked
+//Key phrases: Returns new function, and return number of times it has been called
+//Actions: return inner function, counter for invocations, return counter
+//Strategy: count --> Gets updated every time it gets invoked
 
 function callTimes() {
   // your code here
-  let counter = 0;//create count
-  return () => {//inner function
-  counter++;//updates count
-  return counter;//returns count
-  }
+  let counter = 0; //create count
+  return () => {
+    //inner function
+    counter++; //updates count
+    return counter; //returns count
+  
+  //Refactoring -> Katy and HYeyoon's approach
+  //return () => ++counter;
+  
+  
+  };
 }
 const rose = callTimes();
-console.log(rose())
-console.log(rose())
-console.log(rose())
+console.log(rose());
+console.log(rose());
+console.log(rose());
 
 const delilah = callTimes();
-console.log(rose())
-console.log(delilah())
+console.log(rose());
+console.log(delilah());
 /*
 `
 /*
