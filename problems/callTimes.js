@@ -9,10 +9,29 @@ myFunc(); // 1
 myFunc(); // 2
 */
 
+//Approach
+//Define Success: Success would be returning a number of how many times the function has been invoked
+//Key phrases: Return new function, and return number of times it has been called
+//count --> Gets updated every time it gets invoked
+
 function callTimes() {
   // your code here
+  let counter = 0;//create count
+  return () => {//inner function
+  counter++;//updates count
+  return counter;//returns count
+  }
 }
+const rose = callTimes();
+console.log(rose())
+console.log(rose())
+console.log(rose())
 
+const delilah = callTimes();
+console.log(rose())
+console.log(delilah())
+/*
+`
 /*
 Examples:
 Some sample calls are provided inside `runExamples()`.
